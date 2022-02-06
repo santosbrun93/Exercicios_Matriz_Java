@@ -1,18 +1,18 @@
 import java.util.Random;
 
-public class Exercicio8 {
+public class Exercicio13 {
 
     public static void main(String[] args) {
 
-        int[][] matriz = new int[3][3];
+        int[][] matriz = new int[4][4];
 
         Random random = new Random();
 
-        for (int linha = 0; linha < 3; linha++) {
+        for (int linha = 0; linha < 4; linha++) {
 
-            for (int coluna = 0; coluna < 3; coluna++) {
+            for (int coluna = 0; coluna < 4; coluna++) {
                 matriz[linha][coluna] = random.nextInt(20);
-               }
+            }
         }
     }
 }

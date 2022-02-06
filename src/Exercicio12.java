@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Exercicio8 {
+public class Exercicio12 {
 
     public static void main(String[] args) {
 
@@ -12,7 +12,7 @@ public class Exercicio8 {
 
             for (int coluna = 0; coluna < 3; coluna++) {
                 matriz[linha][coluna] = random.nextInt(20);
-               }
+            }
         }
     }
 }
