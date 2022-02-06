@@ -3,7 +3,10 @@ import java.util.Random;
 public class Exercicio9 {
 
     public static void main(String[] args) {
+
         int[][] matriz = new int[3][3];
+
+        int soma = 0;
 
         Random random = new Random();
 
@@ -11,9 +14,12 @@ public class Exercicio9 {
 
             for (int coluna = 0; coluna < 3; coluna++) {
                 matriz[linha][coluna] = random.nextInt(20);
+
+                if(linha > coluna){
+                    soma = matriz[linha][coluna] + soma;
+                }
             }
         }
-
 
         for(int linha = 0 ; linha < 3; linha++) {
 
@@ -22,17 +28,7 @@ public class Exercicio9 {
             }
             System.out.println("\n");
         }
-        int soma = 0;
-        int coluna = matriz[0].length - 1;
-        for (int linha = 0; linha < matriz.length; linha++) {
-            soma = matriz[linha][coluna] + soma;
-            coluna--;
-            if (coluna < 0) // acabaram as colunas, interrompe o for
-                break;
-        }
 
-        System.out.println(soma);
-
-
+        System.out.println("A soma inferior da Diagonal Principal é :"+soma);
     }
 }

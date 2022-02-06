@@ -15,7 +15,7 @@ public class Exercicio8 {
             for (int coluna = 0; coluna < 3; coluna++) {
                 matriz[linha][coluna] = random.nextInt(20);
 
-                if(linha == coluna){
+                if(coluna > linha){
                     soma = matriz[linha][coluna] + soma;
                     }
                }
@@ -29,6 +29,6 @@ public class Exercicio8 {
             System.out.println("\n");
         }
 
-        System.out.println("A soma da Diagonal Principal é :"+soma);
+        System.out.println("A soma superior da Diagonal Principal é :"+soma);
     }
 }
