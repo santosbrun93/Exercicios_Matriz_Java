@@ -6,31 +6,43 @@ public class Exercicio14 {
 
         int[][]cartela = new int[5][5];
 
+        int[] numerosSorteados = new int[100];
+
+        for(int i = 0 ; i < 100 ; i++){
+            numerosSorteados[i] = -1;
+        }
         Random randon = new Random();
 
-        for(int x=0; x < 5; x++ ) {
-            for(int y=0; y < 5; y++ ) {
-                int n = randon.nextInt(99) + 1;
-                int z = 0;
-                while(z < 5){
-                    if(cartela[x][z] == n){
-                        n = randon.nextInt(99) + 1;
-                        z = 0;
+        for(int linha =0; linha < 5; linha++ ) {
+            for(int coluna =0; coluna < 5; coluna++ ) {
+                boolean validacao = false;
+                do{
+                    int sorteado = randon.nextInt(100);
+                    validacao = validaNumero(numerosSorteados, sorteado);
+                    if(!validacao){
+                        cartela[linha][coluna] = numerosSorteados[sorteado];
                     }
-                    z++;
-                }
-                cartela[x][y] = n;
+                }while(validacao);
             }
         }
+
+
+
+
         for(int linha = 0 ; linha < 5; linha++) {
 
             for(int coluna = 0 ; coluna < 5; coluna++) {
-                System.out.println(cartela[linha][coluna]);
+                System.out.print("| "+cartela[linha][coluna]+" |");
             }
             System.out.println("\n");
         }
 
 
 
+    }
+
+    public static boolean validaNumero(int[] vetor, int numeroRecebido){
+        int numero = vetor[numeroRecebido];
+        return numero > 0;
     }
 }
