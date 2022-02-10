@@ -20,8 +20,13 @@ public class Exercicio17 {
                         menorNota = matrizProvas_Alunos[aluno][prova];
                         prova1++;
 
-                }else if(menorNota > matrizProvas_Alunos[aluno][prova] && prova > 0){
+                }else if(menorNota > matrizProvas_Alunos[aluno][prova] && prova == 1){
                         menorNota = matrizProvas_Alunos[aluno][prova];
+                        prova2++;
+                        if(aluno == 0) prova--;
+                }else if(menorNota > matrizProvas_Alunos[aluno][prova] && prova == 2){
+                        menorNota = matrizProvas_Alunos[aluno][prova];
+                        prova2++;
                 }
             }
         }
