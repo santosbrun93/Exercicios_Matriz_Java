@@ -23,12 +23,20 @@ public class Exercicio17 {
                 }else if(menorNota > matrizProvas_Alunos[aluno][prova] && prova == 1){
                         menorNota = matrizProvas_Alunos[aluno][prova];
                         prova2++;
-                        if(aluno == 0) prova--;
+                        prova1--;
                 }else if(menorNota > matrizProvas_Alunos[aluno][prova] && prova == 2){
                         menorNota = matrizProvas_Alunos[aluno][prova];
-                        prova2++;
+                        prova3++;
+                        if(prova2 > prova1 ) prova2--;
+                        else prova1--;
                 }
             }
         }
+        System.out.printf("A prova 1 foi a pior nota para %d alunos \n",prova1);
+        System.out.printf("A prova 2 foi a pior nota para %d alunos \n",prova2);
+        System.out.printf("A prova 3 foi a pior nota para %d alunos \n",prova3);
+
+
+
     }
 }
